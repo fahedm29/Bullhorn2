@@ -13,10 +13,10 @@ import model.BhPost;
 
 public class DbPost {
 
-	public static int insert(java.util.Date postdate,String posttext,int userid) {
+	public static long insert(java.util.Date postdate,String posttext,long userid) {
 		String sql = "insert into bhpost (postdate,posttext,bhuserid) " +
 				"values(?,?,?)";
-		int recordsAffected = 0;
+		long recordsAffected = 0;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
@@ -26,7 +26,7 @@ public class DbPost {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setDate(1,new java.sql.Date(postdate.getTime()));
 			pstmt.setString(2, posttext);
-			pstmt.setInt(3, userid);
+			pstmt.setLong(3, userid);
 			recordsAffected = pstmt.executeUpdate();
 		}catch (SQLException e) {
 			e.printStackTrace();
@@ -71,7 +71,7 @@ public class DbPost {
 			p.setPostid(postid);
 			p.setPostdate(convertJavaDateToSqlDate(postdate));
 			p.setPosttext(posttext);
-			p.setBhuserid(userid);
+			p.setBhUserid(userid);
 			//add the post to the arraylist
 			posts.add(p);
 		}
@@ -95,7 +95,7 @@ public class DbPost {
 	{
 		List<BhPost> searchposts = new ArrayList<BhPost>();
 
-		String qString = "select b from Bhpost b "
+		String qString = "select b from BhPost b "
 				+ "where b.posttext like :search";
 
 		return searchposts;

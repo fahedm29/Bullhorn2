@@ -10,7 +10,8 @@ public class BhPost implements Serializable {
 	private long postid;
 	private Date postdate;
 	private String posttext;
-	private long bhuserid;
+	private long bhUserid;
+	private BhUser bhUser; 
 
 	public long getPostid() {
 		return this.postid;
@@ -36,12 +37,18 @@ public class BhPost implements Serializable {
 		this.posttext = posttext;
 	}
 
-	public long getBhuserid() {
-		return this.bhuserid;
+	public long getBhUserid() {
+		return this.bhUserid;
 	}
 
-	public void setBhuserid(long bhuserid) {
-		this.bhuserid = bhuserid;
+	public void setBhUserid(long bhUserid) {
+		this.bhUserid = bhUserid;
+	}
+	public BhUser getBhUser() {
+		return this.bhUser;
 	}
 
+	public void setBhUser(BhUser bhUser) {
+		this.bhUser = bhUser;
+	}
 }
