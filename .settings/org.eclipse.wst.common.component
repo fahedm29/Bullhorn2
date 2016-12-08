@@ -2,6 +2,7 @@
     <wb-module deploy-name="Bullhorn2">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/unit test"/>
         <property name="context-root" value="Bullhorn2"/>
         <property name="java-output-path" value="/Bullhorn2/build/classes"/>
     </wb-module>

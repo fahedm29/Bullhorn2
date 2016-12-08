@@ -59,7 +59,7 @@ public class DbUser {
 
 		return user;		
 	}
-	
+
 	public static int insert(BhUser BhUser) {
 		String sql = "insert into BhUser (username,useremail,userpassword,joindate,motto) " + 
 				"values(?,?,?,?,?)";
@@ -121,12 +121,12 @@ public class DbUser {
 	 * @param BhUser
 	 */
 	public static int update(BhUser BhUser) {
-		
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		
+
 		int nmbrUpdated = 0;
-		
+
 		String sql = "update BhUser set username=?, userpassword=?," + 
 				"useremail=?,motto=? where BhUserid=?";
 
@@ -211,7 +211,7 @@ public class DbUser {
 
 		return user;
 	}
-	
+
 	/**
 	 * Is this user valid? This method has the answer for you.
 	 * Checks the database and counts the number of users with this
@@ -227,7 +227,7 @@ public class DbUser {
 		boolean isValid = false;
 		int recordsAffected = 0;
 		String sql = "Select count(BhUserid) from BhUser "
-			+ "where useremail = ? and userpassword = ?";
+				+ "where useremail = ? and userpassword = ?";
 
 		ResultSet rs = null;
 		Connection con = null;
@@ -266,9 +266,9 @@ public class DbUser {
 		}else{
 			isValid = false;
 		}
-			
+
 		return isValid;
-			
+
 	}
-	
+
 }
